@@ -9,7 +9,33 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  */
+ 
+@import "bootstrap";
+
+.home {
+  background-image: linear-gradient(to bottom left, #122e4e, #3778c2)  ;
+  color: white;
+  height: 100vh;
+//  min-height: 100%;
+  font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12;
+  font-weight: 400;
+}
+
+.profile-nav {
+//  margin-top: 30px;
+//  margin-bottom: 100%;
+  padding: 20px;
+}
+
+.nav-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-custom {
+  background-color: #37782c !important;
+  color: #fff;
+}
+

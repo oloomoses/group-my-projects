@@ -1,0 +1,47 @@
+<div class = "row">
+  <div class = "col-sm">
+  <p id="notice"><%= notice %></p>
+
+      <nav class="navbar navbar-custom bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="header" href="#">Navbar</a>
+
+        <div class="search">
+          search
+        </div>
+      </nav>
+
+    <div class = "main">
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Name</th>
+            <th>Time</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @projects.each do |project| %>
+            <tr>
+              <td><%= project.user.name %></td>
+              <td><%= project.name %></td>
+              <td><%= project.time %>hrs</td>
+              <td><%= link_to 'Show', project %></td>
+              <td><%= link_to 'Edit', edit_project_path(project) %></td>
+              <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class = "aside">
+      <%= link_to 'New Project', new_project_path %>
+    <div>
+<div>
+
