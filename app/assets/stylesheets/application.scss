@@ -13,8 +13,20 @@
  
 @import "bootstrap";
 
-.home {
-  background-image: linear-gradient(to bottom left, #122e4e, #3778c2)  ;
+body {
+  background-color: #EcEFF3;
+}
+
+.aside1,
+.main {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #FFF;
+  border-radius: 5px;
+}
+
+.profile {
+  background-image: linear-gradient(to bottom left, #122E4E, #3778C2)  ;
   color: white;
   height: 100vh;
 //  min-height: 100%;
@@ -35,7 +47,48 @@
 }
 
 .navbar-custom {
-  background-color: #37782c !important;
-  color: #fff;
+  background-color: transparent !important;
+  color: #FFF;
+}
+
+.header-nav {
+  background-color: #3778C2;
+  color: white;
+  font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main {
+  margin-right: 0.25px;
+  margin-left: 0.25px;
+}
+
+.aside2 {
+  padding: 20px;
+  background-color: #5FB523;
+}
+
+.btn-text {
+  color: #FFF;
+  border: 1px solid #FFF;
+  padding: 20px 50px;
+}
+
+.btn-text:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.mains-time {
+  font-weight: 700;
+}
+
+.small-font {
+  font-size: 10px;
+}
+
+.nav-title,
+.nav-title:hover {
+  color: #FFF;
+  text-decoration: none;
 }
 

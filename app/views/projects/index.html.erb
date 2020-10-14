@@ -1,47 +1,79 @@
-<div class = "row">
-  <div class = "col-sm">
-  <p id="notice"><%= notice %></p>
+<div class = "container main-wraper">
 
-      <nav class="navbar navbar-custom bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="header" href="#">Navbar</a>
 
-        <div class="search">
-          search
+
+  <div class = "row header-nav">
+    <div class = "col-sm">
+      <p id="notice"><%= notice %></p>
+
+        <div class = "row">
+          <div class = "col">
+            <nav class="navbar navbar-dark bg-light navbar-custom">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="nav-title" href="#">PROJECTS</a>
+
+              <div class="search">
+                search
+              </div>
+            </nav> 
+          </div> 
         </div>
-      </nav>
 
-    <div class = "main">
-      <table>
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Name</th>
-            <th>Time</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
+        <div class = "row">
+          <div class = "col text-center">
+            <ul class = "nav">
+              <li class = "nav-item ml-auto mr-3">Most recent</li>
+              <li class = "nav-item">Most ancient</li>
+            </ul>
+          </div>
+        </div>
 
-        <tbody>
-          <% @projects.each do |project| %>
-            <tr>
-              <td><%= project.user.name %></td>
-              <td><%= project.name %></td>
-              <td><%= project.time %>hrs</td>
-              <td><%= link_to 'Show', project %></td>
-              <td><%= link_to 'Edit', edit_project_path(project) %></td>
-              <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
     </div>
+  </div>
 
 
-    <div class = "aside">
-      <%= link_to 'New Project', new_project_path %>
-    <div>
-<div>
+
+  <div class = "row aside1">
+    <div class = "col-sm col-aside1 d-flex justify-content-between">
+        <div class = "">Totol time</div>
+        <div class = "">hrs</div>
+    </div>
+  </div>
+
+  <div class = "row main mt-2">
+    <div class = "col-sm">
+          <% @projects.each do |project| %>
+              
+              <div class = "mains d-flex">
+                <div class = "mains-img">
+                  <img src = "..." alt = "...">
+                </div>
+
+                <div class = "mains-details d-flex flex-column ml-3">
+                  <div class = ""><%= project.name %></div>
+                  <div class = "small-font mt-3"><%= project.created_at %></div>
+                </div>
+
+                <div class = "mains-time ml-auto">
+                  <%= project.time %>hrs
+                </div>
+
+              </div>
+          <% end %>
+    </div>
+  </div>
+  
+
+  
+  
+  <div class = "row aside2 fixed-bottom">
+    <div class = "col-sm text-center">
+        <%= link_to 'ADD NEW PROJECT', new_project_path, class: 'btn btn-text' %>
+    </div>
+  </div>
+
+
+</div>
 
