@@ -17,8 +17,7 @@ body {
   background-color: #EcEFF3;
 }
 
-.aside1,
-.main {
+.aside1 {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #FFF;
@@ -57,9 +56,10 @@ body {
   font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.main {
-  margin-right: 0.25px;
-  margin-left: 0.25px;
+.mains {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #FFF;
 }
 
 .aside2 {

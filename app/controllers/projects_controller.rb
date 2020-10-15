@@ -6,7 +6,8 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @total_time = Project.sum(:time)
+    @projects = Project.order(created_at: :desc)
   end
 
   # GET /projects/1
@@ -71,7 +72,7 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:user_id, :name, :time)
+      params.require(:project).permit(:user_id, :name, :time, :group_list)
     end
 
     def require_same_user

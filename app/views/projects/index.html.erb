@@ -1,7 +1,5 @@
 <div class = "container main-wraper">
 
-
-
   <div class = "row header-nav">
     <div class = "col-sm">
       <p id="notice"><%= notice %></p>
@@ -38,16 +36,14 @@
     </div>
   </div>
 
-
-
   <div class = "row aside1">
     <div class = "col-sm col-aside1 d-flex justify-content-between">
-        <div class = "">Totol time</div>
-        <div class = "">hrs</div>
+        <div class = "">Total time</div>
+        <div class = "mains-time"><%= @total_time %> hrs</div>
     </div>
   </div>
 
-  <div class = "row main mt-2">
+  <div class = "row main">
     <div class = "col-sm">
           <% @projects.each do |project| %>
               
@@ -62,22 +58,19 @@
                 </div>
 
                 <div class = "mains-time ml-auto">
-                  <%= project.time %>hrs
+                  <%= project.time %> hrs
                 </div>
 
               </div>
           <% end %>
     </div>
   </div>  
-
-  
   
   <div class = "row aside2 fixed-bottom">
     <div class = "col-sm text-center">
         <%= link_to 'ADD NEW PROJECT', new_project_path, class: 'btn btn-text' %>
     </div>
   </div>
-
 
 </div>
 

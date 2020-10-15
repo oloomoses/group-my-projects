@@ -1,0 +1,2 @@
+class ExternalProjectsController < ApplicationController
+end
