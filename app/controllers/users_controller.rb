@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:new]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -28,6 +30,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -69,6 +72,13 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:name, :username, :email)
+    end
+
+    def require_same_user
+      if current_user != @user
+        flash[:danger] = 'You cannot perfom this action'
+        redirect_to root_path
+      end
     end
 end

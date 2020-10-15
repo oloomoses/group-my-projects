@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
@@ -24,8 +26,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    user = User.first
-    @project = user.projects.new(project_params)
+    @project = current_user.projects.new(project_params)
 
     respond_to do |format|
       if @project.save
@@ -71,5 +72,12 @@ class ProjectsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def project_params
       params.require(:project).permit(:user_id, :name, :time)
+    end
+
+    def require_same_user
+      if current_user != @project.user
+        flash[:danger] = "Sorry! you cannot perform this action"
+        redirect_to root_path
+      end
     end
 end

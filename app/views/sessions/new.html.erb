@@ -1,0 +1,44 @@
+<div class = "container main-wraper">
+  
+  <div class = "row header-nav pb-3">
+    <div class = "col-sm">
+      <p id="notice"><%= notice %></p>
+
+        <div class = "row">
+          <div class = "col">
+            <nav class="navbar navbar-dark bg-light navbar-custom">
+              <div class="back-arrow">      
+                
+                <%= link_to login_path do %>
+                <% end %>               
+                
+              </div>
+              <div class="nav-title" href="#">LOG IN</div>
+
+              <div class="search">
+                
+              </div>
+            </nav> 
+          </div> 
+        </div>
+
+    </div>
+  </div>
+
+  <div class = "row form mt-3">
+    <div class = "col-sm">
+              <%= form_with(url: login_path, scope: :session, local: true) do |f|%>
+                <%= f.text_field :username, class: 'form-control', placeholder: 'username' %>
+
+                <div class = "action text-center">
+                  <%= f.submit 'LOG IN', class: 'btn btn-default btn-login'%>
+                </div>
+              <% end %>
+
+              <div class = "text-center">
+                <%= link_to 'SIGN UP', new_user_path, class: 'btn btn-default' %>
+              </div>
+    </div>
+  </div>
+
+</div>

@@ -9,14 +9,19 @@
         <div class = "row">
           <div class = "col">
             <nav class="navbar navbar-dark bg-light navbar-custom">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+
+              <div class = "btn btn-default">
+                <%= link_to user_path(current_user) do %>
+                  <span class="navbar-toggler-icon"></span>
+                <% end %>
+              </div>
+
               <a class="nav-title" href="#">PROJECTS</a>
 
               <div class="search">
                 search
               </div>
+              
             </nav> 
           </div> 
         </div>
@@ -63,8 +68,7 @@
               </div>
           <% end %>
     </div>
-  </div>
-  
+  </div>  
 
   
   
