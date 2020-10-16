@@ -1,0 +1,80 @@
+<div class = "container main-wraper">
+
+  <div class = "row header-nav">
+    <div class = "col-sm">
+      <p id="notice"><%= notice %></p>
+
+        <div class = "row">
+          <div class = "col">
+            <nav class="navbar navbar-dark bg-light navbar-custom">
+
+              <div class = "btn btn-default">
+                <%= link_to user_path(current_user) do %>
+                  <span class="navbar-toggler-icon"></span>
+                <% end %>
+              </div>
+
+              <a class="nav-title" href="#">EXTERNAL PROJECTS</a>
+
+              <div class="search">
+                search
+              </div>
+              
+            </nav> 
+          </div> 
+        </div>
+
+        <div class = "row">
+          <div class = "col text-center">
+            <ul class = "nav">
+              <li class = "nav-item ml-auto mr-3">Most recent</li>
+              <li class = "nav-item">Most ancient</li>
+            </ul>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <div class = "row aside1">
+    <div class = "col-sm col-aside1 d-flex justify-content-between">
+        <div class = "">Total time</div>
+        <div class = "mains-time"><%= @total_time %> hrs</div>
+    </div>
+  </div>
+
+  <div class = "row main">
+    <div class = "col-sm">
+          <% @projects.each do |project| %>
+            <% if project.groups.none? %>
+              
+              <div class = "mains d-flex">
+                <div class = "mains-img">
+                  <img src = "..." alt = "...">
+                </div>
+
+                <div class = "mains-details d-flex flex-column ml-3">
+                  <div class = ""><%= project.name %></div>
+                  <div class = "small-font mt-3"><%= project.created_at %></div>
+                </div>
+
+                <div class = "mains-time ml-auto">
+                  <%= project.time %> hrs
+                </div>
+
+              </div>
+              <% end %>
+          <% end %>
+    </div>
+  </div>  
+  
+  <div class = "row aside2 fixed-bottom">
+    <div class = "col-sm text-center">
+        <%= link_to 'ADD NEW PROJECT', new_project_path, class: 'btn btn-text' %>
+    </div>
+  </div>
+
+</div>
+
+
+

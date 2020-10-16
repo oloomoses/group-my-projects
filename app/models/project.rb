@@ -14,4 +14,5 @@ class Project < ApplicationRecord
     found_groups = group_names.collect {|name| Group.find_or_create_by(name: name)}
     self.groups = found_groups if found_groups
   end
+ 
 end

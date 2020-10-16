@@ -6,8 +6,8 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @total_time = Project.sum(:time)
-    @projects = Project.order(created_at: :desc)
+    @total_time = current_user.projects.sum(:time)
+    @projects = current_user.projects.order(created_at: :desc)
   end
 
   # GET /projects/1
