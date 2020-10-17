@@ -5,6 +5,7 @@ class Group < ApplicationRecord
   mount_uploader :icon, IconUploader
   validate :icon_size
   before_save { self.name.downcase! }
+  default_scope -> { order(created_at: :desc)}
 
 
   def icon_size

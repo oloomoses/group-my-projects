@@ -14,10 +14,12 @@
                 <% end %>
               </div>
 
-              <a class="nav-title" href="#">PROJECTS</a>
+              <a class="nav-title" href="#">All Projects</a>
 
               <div class="search">
-                search
+                <%= link_to logout_path do %>
+                  <div class="nav-title">Log Out</div>
+                <% end %>
               </div>
               
             </nav> 
@@ -28,7 +30,6 @@
           <div class = "col text-center">
             <ul class = "nav">
               <li class = "nav-item ml-auto mr-3">Most recent</li>
-              <li class = "nav-item">Most ancient</li>
             </ul>
           </div>
         </div>
@@ -65,6 +66,8 @@
                 </div>
               <% end %>
           <% end %>
+          <br>
+          <%= will_paginate @projects, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
   </div>  
   

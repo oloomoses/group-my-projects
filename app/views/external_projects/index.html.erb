@@ -17,7 +17,9 @@
               <a class="nav-title" href="#">EXTERNAL PROJECTS</a>
 
               <div class="search">
-                search
+                <%= link_to logout_path do %>
+                  <div class="nav-title">Log Out</div>
+                <% end %>
               </div>
               
             </nav> 
@@ -28,18 +30,10 @@
           <div class = "col text-center">
             <ul class = "nav">
               <li class = "nav-item ml-auto mr-3">Most recent</li>
-              <li class = "nav-item">Most ancient</li>
             </ul>
           </div>
         </div>
 
-    </div>
-  </div>
-
-  <div class = "row aside1">
-    <div class = "col-sm col-aside1 d-flex justify-content-between">
-        <div class = "">Total time</div>
-        <div class = "mains-time"><%= @total_time %> hrs</div>
     </div>
   </div>
 

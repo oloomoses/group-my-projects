@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @total_time = current_user.projects.sum(:time)
-    @projects = current_user.projects.order(created_at: :desc)
+    @projects = current_user.projects.paginate(page: params[:page], per_page: 4)
   end
 
   # GET /projects/1

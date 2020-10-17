@@ -4,6 +4,7 @@ class Project < ApplicationRecord
   belongs_to :user
   has_many :groupings
   has_many :groups, through: :groupings
+  default_scope -> { order(created_at: :desc)}
 
   def group_list
     self.groups.collect {|g| g.name }.join(', ')
