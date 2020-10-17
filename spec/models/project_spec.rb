@@ -19,6 +19,5 @@ RSpec.describe Project, type: :model do
       project = user.projects.new(time: nil)
       expect(project).to be_invalid
     end
-
   end
 end

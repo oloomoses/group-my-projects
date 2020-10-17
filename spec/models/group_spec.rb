@@ -16,7 +16,7 @@ RSpec.describe Group, type: :model do
 
     it 'ensures group name is unique' do
       user = User.create(name: 'user1', username: 'username', email: 'user1@example.com')
-      group = user.groups.create(name: 'group1', icon: 'icon1')
+      user.groups.create(name: 'group1', icon: 'icon1')
       group = user.groups.new(name: 'group1', icon: 'icon')
       expect(group.save).to eq(false)
     end

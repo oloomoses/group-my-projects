@@ -10,34 +10,30 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  */
- 
+
 @import "bootstrap";
 
 body {
-  background-color: #EcEFF3;
+  background-color: #eceff3;
   color: grey;
 }
 
 .aside1 {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 5px;
 }
 
 .profile {
-  background-image: linear-gradient(to bottom left, #122E4E, #3778C2)  ;
+  background-image: linear-gradient(to bottom left, #122e4e, #3778c2);
   color: white;
   height: 100vh;
-//  min-height: 100%;
   font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12;
   font-weight: 400;
 }
 
 .profile-nav {
-//  margin-top: 30px;
-//  margin-bottom: 100%;
   padding: 20px;
 }
 
@@ -48,11 +44,11 @@ body {
 
 .navbar-custom {
   background-color: transparent !important;
-  color: #FFF;
+  color: #fff;
 }
 
 .header-nav {
-  background-color: #3778C2;
+  background-color: #3778c2;
   color: white;
   font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -60,35 +56,35 @@ body {
 .mains {
   margin-top: 10px;
   padding: 10px;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .group-mains {
   margin-top: 10px;
   padding: 10px;
-  color: #FFF;
+  color: #fff;
 }
 
 .mains-details {
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid #fff;
   width: 100%;
   padding-bottom: 20px;
 }
 
 .aside2 {
   padding: 20px;
-  background-color: #5FB523;
+  background-color: #5fb523;
 }
 
 .btn-text {
-  color: #FFF;
-  border: 1px solid #FFF;
+  color: #fff;
+  border: 1px solid #fff;
   padding: 20px 50px;
 }
 
 .btn-text:hover {
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
 }
 
 .mains-time {
@@ -101,12 +97,12 @@ body {
 
 .nav-title,
 .nav-title:hover {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
 }
 
 .group-img {
-  float: left;  
+  float: left;
   margin-right: 10px;
   width: 50px;
   height: 50px;
@@ -120,7 +116,7 @@ body {
 }
 
 .fa-arrow-left {
-  color: white
+  color: white;
 }
 
 .project-link,

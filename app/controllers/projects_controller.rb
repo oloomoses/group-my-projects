@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: %i[show edit update destroy]
   before_action :require_user
-  before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :require_same_user, only: %i[edit update destroy]
 
   # GET /projects
   # GET /projects.json
@@ -12,8 +12,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   # GET /projects/1.json
-  def show
-  end
+  def show; end
 
   # GET /projects/new
   def new
@@ -21,8 +20,7 @@ class ProjectsController < ApplicationController
   end
 
   # GET /projects/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /projects
   # POST /projects.json
@@ -65,20 +63,21 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def project_params
-      params.require(:project).permit(:user_id, :name, :time, :group_list)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
-    def require_same_user
-      if current_user != @project.user
-        flash[:danger] = "Sorry! you cannot perform this action"
-        redirect_to root_path
-      end
-    end
+  # Only allow a list of trusted parameters through.
+  def project_params
+    params.require(:project).permit(:user_id, :name, :time, :group_list)
+  end
+
+  def require_same_user
+    return if current_user == @project.user
+
+    flash[:danger] = 'Sorry! you cannot perform this action'
+    redirect_to root_path
+  end
 end
