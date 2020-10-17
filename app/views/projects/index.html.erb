@@ -46,22 +46,24 @@
   <div class = "row main">
     <div class = "col-sm">
           <% @projects.each do |project| %>
-              
-              <div class = "mains d-flex">
-                <div class = "mains-img">
-                    <%= image_tag(project.groups.first.icon.url, class: 'group-img') if project.groups.any? %>
-                </div>
+              <%= link_to project, class: 'project-link' do %>
 
-                <div class = "mains-details d-flex flex-column ml-3">
-                  <div class = ""><%= project.name %></div>
-                  <div class = "small-font mt-3"><%= project.created_at %></div>
-                </div>
+                <div class = "mains d-flex">
+                  <div class = "mains-img">
+                      <%= image_tag(project.groups.first.icon.url, class: 'group-img') if project.groups.any? %>
+                  </div>
 
-                <div class = "mains-time ml-auto">
-                  <%= project.time %> hrs
-                </div>
+                  <div class = "mains-details d-flex flex-column ml-3">
+                    <div class = ""><%= project.name %></div>
+                    <div class = "small-font mt-3"><%= project.created_at %></div>
+                  </div>
 
-              </div>
+                  <div class = "mains-time ml-auto">
+                    <%= project.time %> hrs
+                  </div>
+
+                </div>
+              <% end %>
           <% end %>
     </div>
   </div>  

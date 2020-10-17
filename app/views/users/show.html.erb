@@ -4,9 +4,9 @@
       <p id="notice"><%= notice %></p>
       
       <p class = "text-center mt-5 mb-3">
-        <img src="..." alt="..." class="rounded"><br>
+        <%= gravatar_for(@user, size: 100)%><br>
         <strong>Name:</strong>
-        <%= @user.name %>
+        <%= @user.username.capitalize %>
       </p>
 
       <ul class = "nav d-block profile-nav">
