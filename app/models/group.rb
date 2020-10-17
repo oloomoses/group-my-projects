@@ -1,4 +1,5 @@
 class Group < ApplicationRecord
+  validates :name, presence: true, length: {in: 1..20}, uniqueness: true
   belongs_to :user
   has_many :groupings
   has_many :projects, through: :groupings
