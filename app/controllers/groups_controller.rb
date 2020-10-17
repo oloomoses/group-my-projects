@@ -1,15 +1,17 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
 
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.order(:name)
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @projects = @group.projects.order(created_at: :desc)
   end
 
   # GET /groups/new

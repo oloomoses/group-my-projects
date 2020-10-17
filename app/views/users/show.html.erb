@@ -3,7 +3,7 @@
     <div class = "col-sm">
       <p id="notice"><%= notice %></p>
       
-      <p class = "text-center mt-5 mb-5">
+      <p class = "text-center mt-5 mb-3">
         <img src="..." alt="..." class="rounded"><br>
         <strong>Name:</strong>
         <%= @user.name %>
@@ -12,16 +12,27 @@
       <ul class = "nav d-block profile-nav">
         <li class = "nav-item border-bottom">
           <%= link_to projects_path do %>
-            All My projects
+            <div class = "nav-title">All My projects</div>
           <% end %>
         </li>
 
         <li class = "nav-item border-bottom">
           <%= link_to external_projects_path do %>        
-            All External projects
+            <div class = "nav-title">All External projects</div>
           <% end %>
         </li>
-        <li class = "nav-item">All Groups</li>
+
+        <li class = "nav-item border-bottom">
+          <%= link_to groups_path do %>        
+            <div class = "nav-title">All Groups</div>
+          <% end %>
+        </li>
+
+        <li class = "nav-item">
+          <%= link_to logout_path do %>
+            <div class = "nav-title">Log Out</div>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>

@@ -1,28 +1,68 @@
-<p id="notice"><%= notice %></p>
+<div class = "profile container">
 
-<h1>Groups</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Icon</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class = "row mb-5">
+      <div class = "col">
+        <nav class="navbar navbar-dark bg-light navbar-custom">
 
-  <tbody>
-    <% @groups.each do |group| %>
-        <td><%= group.name %></td>
-        <td><%= group.icon %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <div class = "btn btn-default">
+            <%= link_to user_path(current_user) do %>
+              <i class="fa fa-arrow-left"></i>
+            <% end %>
+          </div>
 
-<br>
+          <a class="nav-title" href="#">All Groups</a>
 
-<%= link_to 'New Group', new_group_path %>
+          <div class="search">
+          </div>
+          
+        </nav> 
+      </div> 
+    </div>
+
+
+
+
+  <div class = row>
+    <div class = "col-sm">
+      <p id="notice"><%= notice %></p>
+
+
+        <% @groups.each do |group| %>
+          <%= link_to group do %>
+
+              <div class = "group-mains d-flex">
+                <div class = "mains-img">
+                  <%= image_tag(group.icon.url, size: '250x150', class: 'group-img') if group.icon? %>
+                </div>
+
+                <div class = "mains-details d-flex justify-content-between">
+
+                    <div class = "d-flex flex-column ml-3 nav-title">
+                      <div class = ""><%= group.name %></div>
+                      <div class = "small-font mt-3"><%= group.created_at %></div>                  
+                    </div>
+
+                  <% if group.user == current_user %>
+                    <div class = "mains-time">
+                      <div class = "small-font"><%= link_to 'Edit', edit_group_path(group) %></div>
+                      <div class = "small-font mt-3"><%= link_to 'Delete', group, method: :delete, data: {confirm: 'Are You Sure'}  %></div>   
+                    </div>
+                  <% end %>
+                </div>
+
+              </div>
+
+          <% end %>
+        <% end %>
+
+    </div>
+  </div>
+
+  <div class = "row aside2 fixed-bottom">
+    <div class = "col-sm text-center">
+        <%= link_to 'ADD A NEW GROUP', new_group_path, class: 'btn btn-text' %>
+    </div>
+  </div>
+  
+</div>

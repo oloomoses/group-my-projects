@@ -13,6 +13,6 @@ class Project < ApplicationRecord
     group_names = group_string.split(',').collect {|s| s.strip.downcase}.uniq
     found_groups = group_names.collect {|name| Group.find_or_create_by(name: name)}
     self.groups = found_groups if found_groups
-  end
+  end  
  
 end

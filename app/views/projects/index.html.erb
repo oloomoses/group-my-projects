@@ -49,7 +49,7 @@
               
               <div class = "mains d-flex">
                 <div class = "mains-img">
-                  <img src = "..." alt = "...">
+                    <%= image_tag(project.groups.first.icon.url, class: 'group-img') if project.groups.any? %>
                 </div>
 
                 <div class = "mains-details d-flex flex-column ml-3">
