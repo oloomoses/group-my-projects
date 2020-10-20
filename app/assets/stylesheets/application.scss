@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+
+@import "bootstrap";
+
+body {
+  background-color: #eceff3;
+  color: grey;
+}
+
+.aside1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.profile {
+  background-image: linear-gradient(to bottom left, #122e4e, #3778c2);
+  color: white;
+  height: 100vh;
+  font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+.profile-nav {
+  padding: 20px;
+}
+
+.nav-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-custom {
+  background-color: transparent !important;
+  color: #fff;
+}
+
+.header-nav {
+  background-color: #3778c2;
+  color: white;
+  font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.mains {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.group-mains {
+  margin-top: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+.mains-details {
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.aside2 {
+  padding: 20px;
+  background-color: #5fb523;
+}
+
+.btn-text {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 20px 50px;
+}
+
+.btn-text:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.mains-time {
+  font-weight: 700;
+}
+
+.small-font {
+  font-size: 10px;
+}
+
+.nav-title,
+.nav-title:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.group-img {
+  float: left;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+}
+
+.gravatar-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50px;
+}
+
+.fa-arrow-left {
+  color: white;
+}
+
+.project-link,
+.project-link:hover {
+  color: grey;
+  text-decoration: none;
+}
+
+.border-bottom-color {
+  border-bottom: 1px solid grey;
+}

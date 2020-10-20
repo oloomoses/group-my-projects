@@ -1,0 +1,39 @@
+<div class = "profile container-fluid">
+  <div class = row>
+    <div class = "col-sm">
+      <p id="notice"><%= notice %></p>
+      
+      <p class = "text-center mt-5 mb-3">
+        <%= gravatar_for(@user, size: 100)%><br><br>
+        <strong>Name:</strong>
+        <%= @user.username.capitalize %>
+      </p>
+
+      <ul class = "nav d-block profile-nav">
+        <li class = "nav-item border-bottom-color">
+          <%= link_to projects_path do %>
+            <div class = "nav-title">All My projects</div>
+          <% end %>
+        </li>
+
+        <li class = "nav-item border-bottom-color">
+          <%= link_to external_projects_path do %>        
+            <div class = "nav-title">All External projects</div>
+          <% end %>
+        </li>
+
+        <li class = "nav-item border-bottom-color">
+          <%= link_to groups_path do %>        
+            <div class = "nav-title">All Groups</div>
+          <% end %>
+        </li>
+
+        <li class = "nav-item">
+          <%= link_to logout_path do %>
+            <div class = "nav-title">Log Out</div>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

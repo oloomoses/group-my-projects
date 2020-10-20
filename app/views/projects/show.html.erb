@@ -1,0 +1,59 @@
+<div class = "container-fluid main-wraper">
+
+  <div class = "row header-nav">
+    <div class = "col-sm">
+      <p id="notice"><%= notice %></p>
+
+        <div class = "row">
+          <div class = "col">
+            <nav class="navbar navbar-dark bg-light navbar-custom">
+
+              <div class = "btn btn-default">
+                <%= link_to projects_path do %>
+                  <i class="fa fa-arrow-left"></i>
+                <% end %>
+              </div>
+
+              <a class="nav-title" href="#"><%= @project.name.capitalize %></a>
+
+              <div class="search">
+              </div>
+              
+            </nav> 
+          </div> 
+        </div>
+
+
+    </div>
+  </div>
+
+  <div class = "row main">
+    <div class = "col-sm">
+
+      <div class = "mains d-flex">
+
+            <div class = "mains-details d-flex flex-column ml-3">
+              <div class = ""><%= @project.name %></div>
+              <div class = "small-font mt-3"><%= @project.created_at %></div>
+            </div>
+
+            <div class = "mains-time ml-auto">
+              <%= @project.time %> hrs
+            </div>
+
+      </div>
+      <h3>Group</h3>
+
+            <div class = "mains-details d-flex flex-column ml-3">
+              <div class = ""><%= @project.group.name.capitalize if @project.group %></div> 
+            </div>
+                
+    </div>
+  </div>  
+  
+  <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-success' %>
+
+  <%= link_to 'Delete', @project, method: :delete, data: {confirm: 'Are You Sure'}, class: 'btn btn-danger' %>
+
+</div>
+

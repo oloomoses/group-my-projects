@@ -1,0 +1,79 @@
+class ProjectsController < ApplicationController
+  before_action :set_project, only: %i[show edit update destroy]
+  before_action :require_user
+  before_action :require_same_user, only: %i[edit update destroy]
+
+  # GET /projects
+  # GET /projects.json
+  def index
+    @total_time = current_user.projects.sum(:time)
+    @projects = current_user.projects.paginate(page: params[:page], per_page: 4)
+  end
+
+  # GET /projects/1
+  # GET /projects/1.json
+  def show; end
+
+  # GET /projects/new
+  def new
+    @project = Project.new
+  end
+
+  # GET /projects/1/edit
+  def edit; end
+
+  # POST /projects
+  # POST /projects.json
+  def create
+    @project = current_user.projects.new(project_params)
+
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
+  # PATCH/PUT /projects/1
+  # PATCH/PUT /projects/1.json
+  def update
+    respond_to do |format|
+      if @project.update(project_params)
+        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+  # DELETE /projects/1
+  # DELETE /projects/1.json
+  def destroy
+    if @project.destroy
+      redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    else
+      redirect_to @project, notice: 'Error! Project destroy failed'
+    end
+  end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = Project.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def project_params
+    params.require(:project).permit(:user_id, :name, :time, :group_id)
+  end
+
+  def require_same_user
+    return if current_user == @project.user
+
+    flash[:danger] = 'Sorry! you cannot perform this action'
+    redirect_to root_path
+  end
+end
