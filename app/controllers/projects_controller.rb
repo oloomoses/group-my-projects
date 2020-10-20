@@ -30,10 +30,8 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,10 +42,8 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,10 +51,10 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    @project.destroy
-    respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
-      format.json { head :no_content }
+    if @project.destroy
+      redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    else
+      redirect_to @project, notice: 'Error! Project destroy failed'
     end
   end
 
