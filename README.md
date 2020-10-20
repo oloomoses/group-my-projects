@@ -73,7 +73,7 @@ rails s
       - icon should be present
   
 ## Testing
-  Run `rails test`
+  Run `bundle exec rspec`
 
 ## Author
 
