@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      flash[:success] = 'You are logged in'
+      flash[:notice] = 'You are logged in'
       redirect_to user_path(current_user)
     else
-      flash[:danger] = 'Login failed'
+      flash[:alert] = 'Login failed, Username does not exist'
       render :new
     end
   end

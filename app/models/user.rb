@@ -4,6 +4,6 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     uniqueness: true,
                     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
-  has_many :projects
-  has_many :groups
+  has_many :projects, dependent: :destroy
+  has_many :groups, dependent: :destroy
 end

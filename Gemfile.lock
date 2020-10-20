@@ -56,6 +56,9 @@ GEM
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
+    bullet (6.1.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     byebug (11.1.3)
     carrierwave (2.1.0)
       activemodel (>= 5.0.0)
@@ -205,6 +208,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    shoulda-matchers (4.4.1)
+      activesupport (>= 4.2.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -227,6 +232,7 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.7.0)
+    uniform_notifier (1.13.0)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -245,6 +251,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.5, >= 4.5.2)
+  bullet
   byebug
   carrierwave (~> 2.1)
   coffee-rails (~> 4.2)
@@ -260,6 +267,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0, >= 4.0.1)
   rubocop (~> 0.81.0)
   sass-rails (~> 5.0)
+  shoulda-matchers (~> 4.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

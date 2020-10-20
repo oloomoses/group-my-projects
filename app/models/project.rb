@@ -1,18 +1,10 @@
 class Project < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, length: {in: 2..20}
   validates :time, presence: true
   belongs_to :user
-  has_many :groupings
-  has_many :groups, through: :groupings
-  default_scope -> { order(created_at: :desc) }
+  belongs_to :group, optional: true
 
-  def group_list
-    groups.collect(&:name).join(', ')
-  end
+  scope :ungrouped, -> { where(group_id: nil) }
 
-  def group_list=(group_string)
-    group_names = group_string.split(',').collect { |s| s.strip.downcase }.uniq
-    found_groups = group_names.collect { |name| Group.find_or_create_by(name: name) }
-    self.groups = found_groups if found_groups
-  end
+  default_scope -> { order(created_at: :desc).includes([:group]) }
 end

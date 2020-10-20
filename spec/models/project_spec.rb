@@ -1,23 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe Project, type: :model do
-  context 'validation tests' do
-    it 'ensures project is valid with the user id' do
-      user = User.create(name: 'username')
-      project = user.projects.new(name: 'forms', time: 2).save
-      expect(project).to eq(true)
-    end
+  let(:user) do
+    User.create!(
+                  name: 'name',
+                  username: 'username',
+                  email: 'username@example.com'
+                )
+  end
 
-    it 'ensures name is present' do
-      user = User.create(name: 'username')
-      project = user.projects.new(name: nil)
-      expect(project).to be_invalid
-    end
+  describe 'association' do
+    it { should belong_to(:user) }
+  end
 
-    it 'ensures time is present' do
-      user = User.create(name: 'username')
-      project = user.projects.new(time: nil)
-      expect(project).to be_invalid
-    end
+  context 'name validation' do
+    it { should validate_presence_of(:name)}
+    it { should validate_length_of(:name).is_at_most(20)}
+  end
+
+  context 'time validation' do
+    it { should validate_presence_of(:time) }    
   end
 end

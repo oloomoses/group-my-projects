@@ -42,4 +42,9 @@ RSpec.describe User, type: :model do
     user = User.new(name: 'a' * 21)
     expect(user.save).to eq(false)
   end
+
+  context 'association' do
+    it {should have_many(:projects)}
+    it {should have_many(:groups)}
+  end
 end

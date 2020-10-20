@@ -1,4 +1,4 @@
-<div class = "container main-wraper">
+<div class = "container-fluid main-wraper">
 
   <div class = "row header-nav">
     <div class = "col-sm">
@@ -27,7 +27,7 @@
         </div>
 
         <div class = "row">
-          <div class = "col text-center">
+          <div class = "col-sm text-center">
             <ul class = "nav">
               <li class = "nav-item ml-auto mr-3">Most recent</li>
             </ul>
@@ -38,7 +38,7 @@
   </div>
 
   <div class = "row aside1">
-    <div class = "col-sm col-aside1 d-flex justify-content-between">
+    <div class = "col col-aside1 d-flex justify-content-between">
         <div class = "">Total time</div>
         <div class = "mains-time"><%= @total_time %> hrs</div>
     </div>
@@ -51,7 +51,7 @@
 
                 <div class = "mains d-flex">
                   <div class = "mains-img">
-                      <%= image_tag(project.groups.first.icon.url, class: 'group-img') if project.groups.any? %>
+                      <%= display_icon(project) %>
                   </div>
 
                   <div class = "mains-details d-flex flex-column ml-3">

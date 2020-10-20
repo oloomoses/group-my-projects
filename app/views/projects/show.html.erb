@@ -1,4 +1,4 @@
-<div class = "container main-wraper">
+<div class = "container-fluid main-wraper">
 
   <div class = "row header-nav">
     <div class = "col-sm">
@@ -42,14 +42,12 @@
             </div>
 
       </div>
-      <h3>Groups</h3>
+      <h3>Group</h3>
 
-          <% @project.groups.each do |group| %>
             <div class = "mains-details d-flex flex-column ml-3">
-              <div class = ""><%= group.name.capitalize %></div>
+              <div class = ""><%= @project.group.name.capitalize if @project.group %></div> 
             </div>
                 
-          <% end %>
     </div>
   </div>  
   

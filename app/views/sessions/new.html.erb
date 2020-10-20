@@ -1,8 +1,7 @@
-<div class = "container main-wraper">
+<div class = "container-fluid main-wraper">
   
   <div class = "row header-nav pb-3">
-    <div class = "col-sm">
-      <p id="notice"><%= notice %></p>
+    <div class = "col-sm">      
 
         <div class = "row">
           <div class = "col">
@@ -27,6 +26,7 @@
 
   <div class = "row form mt-3">
     <div class = "col-sm">
+      <p id="notice"><%= alert %></p>
               <%= form_with(url: login_path, scope: :session, local: true) do |f|%>
                 <%= f.text_field :username, class: 'form-control', placeholder: 'username' %>
 

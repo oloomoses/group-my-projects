@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-    @projects = @group.projects.order(created_at: :desc)
+    @projects = @group.projects
   end
 
   # GET /groups/new
