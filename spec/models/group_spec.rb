@@ -23,7 +23,7 @@ RSpec.describe Group, type: :model do
   end
 
   context 'Association tests' do
-    it {should belong_to(:user)}
-    it {should have_many(:projects)}
+    it { should belong_to(:user) }
+    it { should have_many(:projects) }
   end
 end
