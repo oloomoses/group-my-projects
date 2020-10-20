@@ -44,7 +44,7 @@ RSpec.describe User, type: :model do
   end
 
   context 'association' do
-    it {should have_many(:projects)}
-    it {should have_many(:groups)}
+    it { should have_many(:projects) }
+    it { should have_many(:groups) }
   end
 end
