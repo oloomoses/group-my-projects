@@ -4,7 +4,7 @@ class Project < ApplicationRecord
   belongs_to :user
   belongs_to :group, optional: true
 
-  scope :ungrouped, -> { where(group_id: nil) }
+  scope :ungrouped, -> { where(group: nil) }
 
   default_scope -> { order(created_at: :desc).includes([:group]) }
 end
