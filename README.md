@@ -1,6 +1,6 @@
 # Group My Projects
 
-This is a Ruby on Rails capstone project, where a build an mobile web app for grouping project based on the programing language used to create them. The app shows the project name, date create and time taken to complete the project. The app also shows the groups available. a user can add a new group and a project as well. The sumation of time spend on all the collective project by a user is also displayed.
+This is a Ruby on Rails capstone project, I a build a mobile web app that can be used by students to group their projects. The app shows the project name, date create and time taken to complete the project. The app also shows the groups available. a user can add a new group and a project as well. The sumation of time spend on all the collective project by a user is also displayed.
 
 ![screenshot](app/assets/images/Screenshot.png)
 
@@ -19,9 +19,11 @@ ruby version 2.7.0
 rails version 5.2.3
 
 ### Setup
+Run the the following commands in your terminal to setup the project in your local computer
+
 1. Clone the project
 ```console
-git@github.com:oloomoses/group-my-projects.git
+git clone git@github.com:oloomoses/group-my-projects.git
 ```
 2. Go to the project folder
 ```console
@@ -35,7 +37,11 @@ git checkout features
 ```console
 bundle install
 ```
-5. Update local database
+5. Postgres db:create
+```console
+rails db:create
+```
+6. Update local database
 ```console
 rails db:migrate
 ```
@@ -47,7 +53,29 @@ rails s
 ```  
 6. Open your browser and type: http://localhost:3000/
 
-## Authors
+## Validations
+   #### users validations
+      - user_name => Should be present 
+      - user_name => Should be unique
+      - name => Should be present
+      - user_name_length => should be a maximum of 20
+      - email => should be present && should be email format
+
+   #### projects validations 
+      - should belong to user
+      - project name must be present
+      - project time must be present
+      - should belong to a group(optional)
+
+   #### groups validation
+      - should belong to user
+      - name should be present
+      - icon should be present
+  
+## Testing
+  Run `rails test`
+
+## Author
 
 👤 **Oloo Moses**
 
