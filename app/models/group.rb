@@ -2,7 +2,7 @@ class Group < ApplicationRecord
   validates :name, presence: true, length: { in: 1..20 }, uniqueness: true
   belongs_to :user
   validates :icon, presence: true
-  has_many :projects, dependent: :destroy
+  has_many :projects, dependent: :nullify
   mount_uploader :icon, IconUploader
   validate :icon_size
   before_save { name.downcase! }
