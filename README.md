@@ -14,6 +14,9 @@ This is my Ruby on Rails capstone project. I build a mobile web app that can be 
 ## Live Version
 https://dry-tundra-15077.herokuapp.com/login
 
+## Video presentation
+https://www.loom.com/share/b2b96a87a6ed4b3d8fd6320e5620fc2e
+
 ### Prerequisites
 ruby version 2.7.0
 rails version 5.2.3
