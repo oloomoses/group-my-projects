@@ -1,6 +1,6 @@
 # Group My Projects
 
-This is my Ruby on Rails capstone project. I build a mobile web app that can be used by students to group their projects. The app shows the project name, date created, and time taken to complete the project. The app also shows the groups available. a user can add a new group and a project as well. The summation of time spend on all the collective project by a user is also displayed.
+A mobile web app that is used by students to group their projects. The app shows the project name, date created, and time taken to complete the project. The app also shows the groups available. a student can add a new group and a project as well. The summation of time spend on all the collective project by a user is also displayed.
 
 ![screenshot](app/assets/images/Screenshot.png)
 
@@ -13,9 +13,6 @@ This is my Ruby on Rails capstone project. I build a mobile web app that can be 
 
 ## Live Version
 https://dry-tundra-15077.herokuapp.com/login
-
-## Video presentation
-https://www.loom.com/share/b2b96a87a6ed4b3d8fd6320e5620fc2e
 
 ### Prerequisites
 ruby version 2.7.0
